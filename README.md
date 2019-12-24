@@ -1,4 +1,9 @@
 # gtest_demo
+
+![AUR](https://img.shields.io/aur/license/yaourt.svg)
+[![Build Status](https://travis-ci.org/MrPoudel/gtest-demo.svg?branch=master)](https://travis-ci.org/MrPoudel/gtest-demo)
+<!--![Discourse topics](https://img.shields.io/discourse/https/meta.discourse.org/topics.svg)-->
+
 Integration of the google test framework(gtest) with existing project using cmake build system
 
 ## Method 1
