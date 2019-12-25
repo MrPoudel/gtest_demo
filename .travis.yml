@@ -2,10 +2,10 @@ dist: trusty
 su3do: required
 before_install:
   - sudo apt-get install libgtest-dev
-  #- cd /usr/src/gtest
-  #- sudo cmake CMakeLists.txt
-  #- sudo make
-  #- sudo cp *.a /usr/lib
+  - cd /usr/src/gtest
+  - sudo cmake CMakeLists.txt
+  - sudo make
+  - sudo cp *.a /usr/lib
  
 # Enable C++ support
 language: cpp
