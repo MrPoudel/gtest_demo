@@ -11,22 +11,34 @@ before_install:
 # Enable C++ support
 language: cpp
 
-# Sonar integration for code that smells :)
-#addons:
- # sonarcloud:
-  #  - organization: Dovantech Github
-   # - token:
-    #   secure: dafe9422fd40d91e2cf44d7465d9b9fec4db6e9e
+addons:
+  apt:
+    packages:
+      - openjdk-6-jdk
+jdk: openjdk6
 
-script:
- #- sonarqube
- - sudo mkdir build
- - cd build
- - sudo cmake ..
- - sudo make
- - sudo ./friends_lib_test
+# Sonar integration for code that smells :)
+addons:
+  sonarcloud:
+    organization: "mrpoudel"
+    token:
+      secure: 3834ff8859b1fe59f7f57cfa8446b1a869a006c1 # encrypted value of your token     
+env:
+  - SONAR=true
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
  
-#Cache:
-#  directories:
- # $HOME/.sonar/cache
-  #$HOME/.gradle
+# Avoid Java heap space error or java.lang.OutOfMemoryError 
+export SONAR_SCANNER_OPTS="-Xmx512m"
+
+script:  
+  - sudo mkdir build
+  - cd build
+  - sudo cmake ..
+  - sudo make
+  - sudo ./friends_lib_test
+  # And finally run the SonarQube analysis - read the "sonar-project.properties"
+  # file to see the specific configuration   
+  #Debugging info with -x flag
+  - sonar-scanner -X

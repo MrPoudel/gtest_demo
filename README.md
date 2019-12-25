@@ -1,6 +1,5 @@
 # gtest_demo
 
-![AUR](https://img.shields.io/aur/license/yaourt.svg)
 [![Build Status](https://travis-ci.org/MrPoudel/gtest_demo.svg?branch=master)](https://travis-ci.org/MrPoudel/gtest_demo)
 <!--![Discourse topics](https://img.shields.io/discourse/https/meta.discourse.org/topics.svg)-->
 
