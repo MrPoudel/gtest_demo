@@ -19,9 +19,7 @@ language: cpp
 
 script:
  #- sonarqube
- - sudo mkdir build
- - cd build
- - sudo cmake ..
+ - sudo cmake .
  - sudo make
  - sudo ./friends_lib_test
  
