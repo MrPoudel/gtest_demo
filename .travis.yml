@@ -1,5 +1,5 @@
 dist: trusty
-su3do: required
+sudo: required
 before_install:
   - sudo apt-get install libgtest-dev
   - cd /usr/src/gtest
