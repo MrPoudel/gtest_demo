@@ -21,9 +21,9 @@ script:
  #- sonarqube
  - sudo mkdir build
  - cd build
- - cmake ..
- - make
- - ./friends_lib_test
+ - sudo cmake ..
+ - sudo make
+ - sudo ./friends_lib_test
  
 #Cache:
 #  directories:
