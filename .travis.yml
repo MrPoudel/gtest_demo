@@ -2,11 +2,11 @@ dist: trusty
 sudo: required
 before_install:
   - sudo apt-get install libgtest-dev cmake
-  - cd /usr/src/gtest
-  - sudo cmake CMakeLists.txt
-  - sudo make
-  - sudo cp *.a /usr/lib
-  - cd
+  #- cd /usr/src/gtest
+  #- sudo cmake CMakeLists.txt
+  #- sudo make
+  #- sudo cp *.a /usr/lib
+  #- cd
  
 # Enable C++ support
 language: cpp
@@ -20,7 +20,9 @@ language: cpp
 
 script:
  #- sonarqube
- - sudo cmake .
+ - sudo mkdir build
+ - cd build
+ - sudo cmake ..
  - sudo make
  - sudo ./friends_lib_test
  
