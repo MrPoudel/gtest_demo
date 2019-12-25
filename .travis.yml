@@ -19,7 +19,7 @@ language: cpp
 
 script:
  #- sonarqube
- - mkdir build
+ - sudo mkdir build
  - cd build
  - cmake ..
  - make
