@@ -24,6 +24,7 @@ Then run the make file:
 `$sudo make`
 
 Finally, copy the recently built static libraries to the /usr/lib so that the application finds it easily:
+
 `sudo cp *.a /usr/lib`
 
 ## Method 2
