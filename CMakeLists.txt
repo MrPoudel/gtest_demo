@@ -21,3 +21,6 @@ target_link_libraries(main friends_lib ${GTEST_LIBRARIES} pthread)
 # Link friends_lib_test with what we want to test and the GTest and pthread library
 add_executable(friends_lib_test ${CMAKE_CURRENT_SOURCE_DIR}/test/friends_lib_test.cpp)
 target_link_libraries(friends_lib_test friends_lib ${GTEST_LIBRARIES} pthread)
+
+# Exception example
+add_executable(exception_demo exception_demo.cpp)
