@@ -41,4 +41,4 @@ script:
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
   # file to see the specific configuration   
   #Debugging info with -x flag
-  - sonar-scanner -X
+  - sonar-scanner 
