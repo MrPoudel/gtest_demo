@@ -32,13 +32,13 @@ cache:
 # Avoid Java heap space error or java.lang.OutOfMemoryError 
 #export SONAR_SCANNER_OPTS="-Xmx512m"
 
-script:  
+script:    
   - sudo mkdir build
   - cd build
-  - sudo cmake ..
+  - build-wrapper-linux-x86-64 --out-dir bw-output cmake ..
   - sudo make
   - sudo ./friends_lib_test
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
   # file to see the specific configuration   
   #Debugging info with -x flag
-  - sonar-scanner -X
+  - sonar-scanner -X -Dsonar.cfamily.build-wrapper-output=bw-output
