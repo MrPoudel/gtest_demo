@@ -33,11 +33,11 @@ cache:
 #export SONAR_SCANNER_OPTS="-Xmx512m"
 
 script:    
-  - sudo mkdir build
+  - mkdir build
   - cd build
   - build-wrapper-linux-x86-64 --out-dir bw-output cmake ..
-  - sudo make
-  - sudo ./friends_lib_test
+  - make clean all
+  - ./friends_lib_test
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
   # file to see the specific configuration   
   #Debugging info with -x flag
