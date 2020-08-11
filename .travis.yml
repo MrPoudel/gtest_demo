@@ -33,9 +33,9 @@ cache:
 #export SONAR_SCANNER_OPTS="-Xmx512m"
 
 script:    
-  - mkdir build
-  - cd build
-  - build-wrapper-linux-x86-64 --out-dir bw-output cmake ..
+#   - mkdir build
+#   - cd build
+  - build-wrapper-linux-x86-64 --out-dir bw-output cmake .
   - make clean all
   - ./friends_lib_test
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
