@@ -31,10 +31,10 @@ Finally, copy the recently built static libraries to the /usr/lib so that the ap
 Then provide the include and link path as follows in your `Makefile`:
 
 
-`GTEST_INCLUDES=-I/usr/lib/gtest/include/gtest`
+`GTEST_INCLUDES=-I/usr/include/gtest`
 
 
-`GTEST_LIBS=-pthread -lgmock`
+`GTEST_LIBS=-pthread -lgtest`
 
 
 `LIBRARY_INCLUDES=-L/usr/lib`
