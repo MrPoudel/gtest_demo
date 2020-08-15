@@ -29,13 +29,23 @@ Finally, copy the recently built static libraries to the /usr/lib so that the ap
 
 ## Makefile integration
 Then provide the include and link path as follows in your `Makefile`:
+
+
 `GTEST_INCLUDES=-I/usr/lib/gtest/include/gtest`
+
+
 `GTEST_LIBS=-pthread -lgmock`
+
+
 `LIBRARY_INCLUDES=-L/usr/lib`
+
+
 
 Then link the libraries:
 
+
 `$ g++ $(GTEST_INCLUDES) $(LIBRARY_INCLUDES) test.cpp $(GTEST_LIBS) -o tester
+
 
 ## CMake integration
 See the CMakeLists.txt in project's root.
