@@ -11,7 +11,7 @@ For example on ubuntu machine it can be done as follows:
 
 `$sudo apt-get install libgtest-dev`
 
-After that navigae to /usr/src/gtest:
+However, this won't install the needed libraries. It only copies the source files that needs to be build. So navigae to /usr/src/gtest:
 
 `$cd /usr/src/gtest`
 
@@ -26,6 +26,19 @@ Then run the make file:
 Finally, copy the recently built static libraries to the /usr/lib so that the application finds it easily:
 
 `sudo cp *.a /usr/lib`
+
+## Makefile integration
+Then provide the include and link path as follows in your `Makefile`:
+`GTEST_INCLUDES=-I/usr/lib/gtest/include/gtest`
+`GTEST_LIBS=-pthread -lgmock`
+`LIBRARY_INCLUDES=-L/usr/lib`
+
+Then link the libraries:
+
+`$ g++ $(GTEST_INCLUDES) $(LIBRARY_INCLUDES) test.cpp $(GTEST_LIBS) -o tester
+
+## CMake integration
+See the CMakeLists.txt in project's root.
 
 ## Method 2
 
